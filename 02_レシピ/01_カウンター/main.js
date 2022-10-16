@@ -1,14 +1,18 @@
 const display = document.getElementById("display")
-const plusButton = document.getElementById("plus-button")
-const display1 = document.getElementById("display1")
-const minusbutton = document.getElementById("minusButton")
-let count = 30
-plusButton.onclick = function () {
-  count += 1
+const plusbutton = document.getElementById("plus-button")
+const minusbutton = document.getElementById("minus-button")
+const baibutton = document.getElementById("bai-button")
+
+let count = 0
+plusbutton.onclick = function () {
+  count++
   display.textContent = count
 }
-
-minusbutton.onclick = function () {
-  count -= 1
-  display1.textContent = count
+minusbutton.onmousemove = function () {
+  count--
+  display.textContent = count
+}
+baibutton.onclick = function () {
+  count *= 2
+  display.textContent = count
 }

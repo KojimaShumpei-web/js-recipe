@@ -2,26 +2,18 @@ const display = document.getElementById("display")
 const button = document.getElementById("button")
 
 let count = 0
-const countUp = function () {
-  count += 1
-
+const countup = function () {
+  count++
   display.textContent = count / 100
 }
 
-button.onclick = function () {
-  setInterval(countUp, 10)
-  console.log(count)
-  button.textContent = "stop"
-}
 let id = null
 
 button.onclick = function () {
   if (id === null) {
-    // start
-    id = setInterval(countUp, 10)
+    id = setInterval(countup, 10)
     button.textContent = "stop"
   } else {
-    // stop
     clearInterval(id)
     id = null
     button.textContent = "start"
